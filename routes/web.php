@@ -16,7 +16,7 @@ Route::get('/{foo?}', function ($foo = 'bar') {
     return $foo;
 })->where('foo', '[0-9a-zA-Z]{3}');
 */
-
+/*
 Route::get('/', [
     'as' => 'home', 
     function(){
@@ -26,4 +26,11 @@ Route::get('/', [
 
 Route::get('/home', function(){
     return redirect(route('home'));
+});
+*/
+Route::get('/', function(){
+    return view('welcome', [
+        'name' => 'Foo',
+        'greeting' => 'Hello?',
+    ]);
 });
