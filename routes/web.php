@@ -11,6 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+/*
+Route::get('/{foo?}', function ($foo = 'bar') {
+    return $foo;
+})->where('foo', '[0-9a-zA-Z]{3}');
+*/
+
+Route::get('/', [
+    'as' => 'home', 
+    function(){
+        return 'My name is "home".';
+    }
+]);
+
+Route::get('/home', function(){
+    return redirect(route('home'));
 });
